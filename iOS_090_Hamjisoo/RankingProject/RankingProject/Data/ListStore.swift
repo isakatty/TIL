@@ -11,6 +11,10 @@ class ElementalStore: ObservableObject {
     @Published var elements : [ElementAnimation] = []
     @Published var newElements : [ElementAnimation] = []
     
+    var membersEmpty: Bool {
+        newElements.isEmpty
+    }
+    
     init(){
     elements = [
         ElementAnimation(name: "엠버 루멘", image: "https://static.wikia.nocookie.net/disney/images/3/36/Profile_-_Ember_Lumen.png/revision/latest?cb=20230330062658", rank: 1),
@@ -29,9 +33,16 @@ class ElementalStore: ObservableObject {
         newElements.append(member)
     }
     // 정렬하기 위한 함수
-    func sortingChars(){
+    func sortRankingChars(){
         // 버튼이 눌리면, newElements의 정렬.
-        newElements.sort()
+        newElements.sort(by: <)
+        // sort의 기준을 넣어주었다면, comparable을 채택하지 않았을수도 ?!
+    }
+    
+    func sortNamingChars(){
+        // 버튼이 눌리면, newElements의 정렬.
+        newElements.sort(by: >)
+        // sort의 기준을 넣어주었다면, comparable을 채택하지 않았을수도 ?!
     }
     
     func removeCharac(_ characters : ElementAnimation){
@@ -49,5 +60,6 @@ class ElementalStore: ObservableObject {
     func removeCharacAll(){
         newElements.removeAll()
     }
+    
     
 }

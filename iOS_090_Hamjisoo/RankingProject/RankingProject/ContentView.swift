@@ -9,7 +9,7 @@
  <추가로 적용할 사항>
  
  - 지금 정렬이 rank에 의한 정렬뿐. 정렬 종류를 골라서 사용할 수 있다면 ?!
-    picker를 어떻게 사용하면 되지 않을까 ?
+    picker를 어떻게 사용하면 되지 않을까 ? - 다른 방법으로 완 ! but 문제 있음.
  - DetailView에서 자세하게 보여줄 수 있다면 ?! - 완
  - 버튼의 온오프 기능이 생겼으면 좋겠어요 ! - 완
  */
@@ -21,6 +21,7 @@ struct ContentView: View {
     @State var tabIndex: Int = 1
     
     var body: some View {
+        // TabView를 이용하여 캐릭터의 자세한 내용을 알 수 있게 View를 연결함.
         TabView(selection: $tabIndex) {
             NavigationStack{
                 SelectedListView(elementStore: ElementalStore())

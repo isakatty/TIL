@@ -14,6 +14,11 @@ struct ElementAnimation: Identifiable, Comparable {
         return lhs.rank < rhs.rank
     }
     
+    static func > (lhs: ElementAnimation, rhs: ElementAnimation) -> Bool {
+        return lhs.name < rhs.name
+    }
+    
+    
     var id: UUID = UUID()
     var name: String
     var image: String

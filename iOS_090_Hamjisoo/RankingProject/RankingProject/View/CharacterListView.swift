@@ -16,7 +16,6 @@
  취소 기능은 아예 선택을 하지 않을때 사용할 수 있게 변경.
  
  원하는 기능을 구현했다고 생각할 수 있을까?
- 
  */
 
 import SwiftUI
@@ -27,17 +26,19 @@ struct CharacterListView: View {
     @ObservedObject var elementStore: ElementalStore
     
     @Binding var isChosen: Bool
-    @Binding var isNewElements: Bool
     
     var body: some View {
         NavigationStack{
             VStack{
+                // 각 리스트는 버튼으로 구성이 되어, 버튼의 action 부분에 추가 함수를 넣어줌.
+                // 처음에 다중 선택을 하고 확인을 눌렀을때, 화면이 내려가게 만들어서 확인 버튼이 계속 남아있는것.
+                // 혹시 선택을 하지 않고 추가 화면을 끄고 싶을때, 취소 버튼을 누르면 sheet에 연결되는 boolean 값을 false로
+                // 넣어주어 내려가게 만듦.
                 List(elementStore.elements){ chars in
                     Button {
-                        //버튼을 눌렀을때, 그 값을 새 배열에 담고 싶은데 멀까 -> 함수를 사용하여 추가
+                        //버튼을 눌렀을때, 그 값을 새 배열에 담고 싶은데 뭘까 -> 함수를 사용하여 추가
                         elementStore.addCharac(name: chars.name, image: chars.image, rank: chars.rank)
                         isChosen = false
-                        isNewElements = true
                     } label: {
                         HStack{
                             AsyncImage(url: URL(string: "\(chars.image)")){ image in
@@ -48,14 +49,12 @@ struct CharacterListView: View {
                             }placeholder: {
                                 ProgressView()
                             }
-                            
                             Spacer()
                             Text(chars.name)
                         }
                     }
-                    
                 }
-            }
+            }//Vstack
             .navigationTitle("Elemental")
             .toolbar {
                 ToolbarItem(placement: .navigationBarLeading) {
@@ -73,14 +72,14 @@ struct CharacterListView: View {
                     }
                 }
             }
-        }
-    }
+        }//NavigationStack
+    }//body
 }
 
 struct CharacterListView_Previews: PreviewProvider {
     static var previews: some View {
         NavigationStack{
-            CharacterListView(elementStore: ElementalStore(), isChosen: .constant(true), isNewElements: .constant(true))
+            CharacterListView(elementStore: ElementalStore(), isChosen: .constant(true))
         }
     }
 }

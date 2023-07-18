@@ -11,7 +11,6 @@ struct AboutCharacterDetailVeiw: View {
     
     let elements: ElementAnimation
     
-    
     var body: some View {
         ZStack{
             Rectangle()
@@ -49,6 +48,7 @@ struct AboutCharacterDetailVeiw: View {
                     Text("\(elements.name)")
                         .bold()
                     Spacer()
+                    //1등한테만 주기 ~ 수정해야함.
                     Text("\(elements.rank)등 🏆")
                     Spacer()
                 }

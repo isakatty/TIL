@@ -7,7 +7,14 @@
 
 import SwiftUI
 
+/*
+ 캐릭터의 정보를 보여주기 위해 구성한 리스트.
+ NavigationLink를 통해 각 캐릭터의 정보를 보여줌
+ */
+
+
 struct AboutCharacterListView: View {
+    
     var elementStore: ElementalStore
     
     var body: some View {
@@ -19,7 +26,7 @@ struct AboutCharacterListView: View {
                     HStack{
                         //image, phase는 그릇임
                         // url을 통해 이미지를 받아와 그 그릇
-                        // -> enum의 한 값으로 데려온 것이기 때문
+                        // placeholder를 없앤 image는 enum의 한 값으로 담아온 것.
                         AsyncImage(url: URL(string: "\(charic.image)")){ image in
                             image
                                 .resizable()
@@ -28,16 +35,11 @@ struct AboutCharacterListView: View {
                         } placeholder: {
                             ProgressView()
                         }
-                        
-                        
-                        
                         Spacer()
                         Text(charic.name)
                     }
                 }
-                
             }
-            
             .navigationTitle("About Characters")
         }
     }
