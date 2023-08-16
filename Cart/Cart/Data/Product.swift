@@ -17,6 +17,8 @@ extension Double {
         return formatter.string(from: NSNumber(value: self)) ?? ""
     }
 }
+// 모든 케이스를 보여줄거임 -> ProductCategory.allcases ->
+// 모든 배열임 !!!!
 
 //enum ProductCategory: String, CaseIterable {
 //    case device = "전자기기"
@@ -39,4 +41,8 @@ struct Product: Identifiable, Codable {
     var changedPrice: String{
         productPrice.currencyString
     }
+    
+    // 저 enum을 프로퍼티로 들고 와서 filter로 적용하는 방법도 있삼!!!
+    
+    
 }
