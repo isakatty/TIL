@@ -50,11 +50,9 @@ struct ContentView: View {
             }
             .navigationTitle("memozzang")
             .refreshable {
-                // Firestore 일때
                 memoStore.fetchMemo()
             }
             .onAppear {
-                // Firestore 일때
                 memoStore.fetchMemo()
             }
         }
