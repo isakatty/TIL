@@ -34,12 +34,15 @@ class MemoStore: ObservableObject{
                     let docData = document.data()
                     let title: String = docData["title"] as? String ?? ""
                     let text: String = docData["text"] as? String ?? ""
+                    let createdAt: Double = docData["createdAt"] as? Double ?? 0
                     
-                    let memo: Memo = Memo(id: id, title: title, text: text)
+                    let memo: Memo = Memo(id: id, title: title, text: text, createdAt: createdAt)
                     savedMemoArray.append(memo)
                 }
                 
                 self.memoArray = savedMemoArray
+                // 후행 클로저로 만들어있기 때문에 다른 스레드에서 작용하게 되니까 어느 스레드에서 사용될지 알려주기 위해 self를 붙인다 ?
+                self.sortMemoArray()
             }
         }
     }
@@ -53,9 +56,10 @@ class MemoStore: ObservableObject{
         // 배열에 추가해줌으로 배열과 DB에 올라간 데이터까지 연동
         Firestore.firestore().collection("Memo")
             .document(memo.id)
-            .setData(["title": memo.title, "text": memo.text])
+            .setData(["title": memo.title, "text": memo.text, "createdAt": memo.createdAt])
         
         memoArray.append(memo)
+        sortMemoArray()
     }
     
     // 데이터 제거
@@ -73,5 +77,17 @@ class MemoStore: ObservableObject{
         }
         
         memoArray.remove(atOffsets: offsets)
+        sortMemoArray()
+    }
+    
+    func sortMemoArray() {
+        // 조건이 맞으면 sorting 됨. 메모 두개를 꺼내서 계속 비교 할 것.
+        memoArray = memoArray.sorted{ memo1, memo2 in
+            memo1.createdAt < memo2.createdAt
+        }
+        // 클로저 문법에 의해 생략.
+//        memoArray = memoArray.sorted{ $0, $1 in
+//            $0.createdAt < $1.createdAt
+//        }
     }
 }

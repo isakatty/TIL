@@ -24,6 +24,8 @@ struct ContentView: View {
                                 .fontWeight(.semibold)
                             Text(memo.text)
                                 .fontWeight(.light)
+                            Text(memo.createdData)
+                                .font(.caption2)
                         }
                     }
                     .onDelete{ indexSet in
