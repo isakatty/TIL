@@ -7,20 +7,6 @@
 
 import SwiftUI
 
-extension View {
-    func borderedCaption(condition: Binding<Bool>) -> some View {
-        modifier(BorderCaption(condition: condition))
-    }
-    
-    func deliveryTextStyleModifier(isSelected: Binding<Bool>) -> some View {
-        modifier(DeliveryTextStyleModifier(isSelected: isSelected))
-    }
-    
-    func deliveryButtonBackgroundModifier() -> some View {
-        modifier(DeliveryButtonBackgroundModifier())
-    }
-}
-
 enum deliveryChoice: String, CaseIterable {
     
     case onlyOne = "한집배달"
@@ -72,26 +58,10 @@ struct ContentView: View {
                         }
                     }
                     .frame(height: 40)
-                    .deliveryButtonBackgroundModifier()
-                    .deliveryTextStyleModifier(isSelected: Binding(
-                        get: { return deliverOpt == deliver },
-                        set: { newValue in
-                            if newValue {
-                                deliverOpt = deliver
-                            }
-                        }
-                    ))
-//                    .deliveryTextStyleModifier(isSelected: Binding(get: {
-//                        return deliverOpt == deliver
-//                    }, set: { _ in
-//                        deliverOpt = deliver
-//                    }))
-                    /*
-                     47번째 라인에서 선택된 버튼의 값을 deliverOpt에 할당.
-                     77번째 라인에서 deliverOpt과 deliver가 같다면 true를 반환. (get - 읽기 기능)
-                     78번째 라인에서 deliver을 deliverOpt에 할당. (set - 쓰기 기능)
-                     
-                     */
+                    .modifier(DeliveryButtonBackgroundModifier())
+                    .modifier(DeliveryTextStyleModifier(isSelected: deliverOpt == deliver))
+//                    .deliveryButtonBackgroundModifier()
+//                    .deliveryTextStyleModifier(isSelected: deliverOpt == deliver)
                 }
             }
         }

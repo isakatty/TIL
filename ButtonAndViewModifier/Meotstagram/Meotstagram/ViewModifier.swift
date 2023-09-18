@@ -23,15 +23,10 @@ struct BorderCaption: ViewModifier {
 }
 
 struct DeliveryTextStyleModifier: ViewModifier {
-    @Binding var isSelected: Bool
+    let isSelected: Bool
     
     func body(content: Content) -> some View {
         content
-//            .padding(10)
-//            .background(
-//                RoundedRectangle(cornerRadius: 5)
-//                    .stroke(lineWidth: 1)
-//            )
             .foregroundColor(isSelected ? .blue : .black)
             .font(.system(size: 18, weight: isSelected ? .bold : .regular))
     }
