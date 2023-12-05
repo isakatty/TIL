@@ -1,5 +1,5 @@
 ---
-name: "\b⚠️ 이슈 템플릿"
+name: Issue_Template
 about: Describe this issue template's purpose here.
 title: ''
 labels: enhancement
@@ -7,7 +7,7 @@ assignees: ''
 
 ---
 
-## ⚠️ Issue
+## ⚠️ Issue #(이슈번호)
 - 이슈 개요를 입력해주세요.
 
 ### ✏️ To Do List
