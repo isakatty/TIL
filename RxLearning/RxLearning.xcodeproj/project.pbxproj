@@ -7,20 +7,22 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		513EB9D1AE75D243AF2D1E66 /* Pods_RxLearning.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1D5B517A2468C77D442681AE /* Pods_RxLearning.framework */; };
 		C935BAE92B3D929B00657AE7 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C935BAE82B3D929B00657AE7 /* AppDelegate.swift */; };
 		C935BAEB2B3D929B00657AE7 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C935BAEA2B3D929B00657AE7 /* SceneDelegate.swift */; };
 		C935BAED2B3D929B00657AE7 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C935BAEC2B3D929B00657AE7 /* ViewController.swift */; };
-		C935BAF02B3D929B00657AE7 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C935BAEE2B3D929B00657AE7 /* Main.storyboard */; };
 		C935BAF22B3D929C00657AE7 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C935BAF12B3D929C00657AE7 /* Assets.xcassets */; };
 		C935BAF52B3D929C00657AE7 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C935BAF32B3D929C00657AE7 /* LaunchScreen.storyboard */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		1D5B517A2468C77D442681AE /* Pods_RxLearning.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_RxLearning.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		6F225D445F6AA64B9B9C706A /* Pods-RxLearning.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RxLearning.release.xcconfig"; path = "Target Support Files/Pods-RxLearning/Pods-RxLearning.release.xcconfig"; sourceTree = "<group>"; };
+		78DDB1E4552AD32218F4D698 /* Pods-RxLearning.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RxLearning.debug.xcconfig"; path = "Target Support Files/Pods-RxLearning/Pods-RxLearning.debug.xcconfig"; sourceTree = "<group>"; };
 		C935BAE52B3D929B00657AE7 /* RxLearning.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RxLearning.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C935BAE82B3D929B00657AE7 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		C935BAEA2B3D929B00657AE7 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		C935BAEC2B3D929B00657AE7 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		C935BAEF2B3D929B00657AE7 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		C935BAF12B3D929C00657AE7 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		C935BAF42B3D929C00657AE7 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		C935BAF62B3D929C00657AE7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -31,17 +33,29 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				513EB9D1AE75D243AF2D1E66 /* Pods_RxLearning.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		BFFB8E06C6EFD39893365B57 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				78DDB1E4552AD32218F4D698 /* Pods-RxLearning.debug.xcconfig */,
+				6F225D445F6AA64B9B9C706A /* Pods-RxLearning.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
 		C935BADC2B3D929B00657AE7 = {
 			isa = PBXGroup;
 			children = (
 				C935BAE72B3D929B00657AE7 /* RxLearning */,
 				C935BAE62B3D929B00657AE7 /* Products */,
+				BFFB8E06C6EFD39893365B57 /* Pods */,
+				D705F6DDE97B87D3A161A69A /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -59,12 +73,19 @@
 				C935BAE82B3D929B00657AE7 /* AppDelegate.swift */,
 				C935BAEA2B3D929B00657AE7 /* SceneDelegate.swift */,
 				C935BAEC2B3D929B00657AE7 /* ViewController.swift */,
-				C935BAEE2B3D929B00657AE7 /* Main.storyboard */,
 				C935BAF12B3D929C00657AE7 /* Assets.xcassets */,
 				C935BAF32B3D929C00657AE7 /* LaunchScreen.storyboard */,
 				C935BAF62B3D929C00657AE7 /* Info.plist */,
 			);
 			path = RxLearning;
+			sourceTree = "<group>";
+		};
+		D705F6DDE97B87D3A161A69A /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				1D5B517A2468C77D442681AE /* Pods_RxLearning.framework */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -74,9 +95,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = C935BAF92B3D929C00657AE7 /* Build configuration list for PBXNativeTarget "RxLearning" */;
 			buildPhases = (
+				65434F03EF563495FEF6E870 /* [CP] Check Pods Manifest.lock */,
 				C935BAE12B3D929B00657AE7 /* Sources */,
 				C935BAE22B3D929B00657AE7 /* Frameworks */,
 				C935BAE32B3D929B00657AE7 /* Resources */,
+				314B50A4D50B083BC3939BCF /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -127,11 +150,52 @@
 			files = (
 				C935BAF52B3D929C00657AE7 /* LaunchScreen.storyboard in Resources */,
 				C935BAF22B3D929C00657AE7 /* Assets.xcassets in Resources */,
-				C935BAF02B3D929B00657AE7 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		314B50A4D50B083BC3939BCF /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-RxLearning/Pods-RxLearning-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-RxLearning/Pods-RxLearning-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-RxLearning/Pods-RxLearning-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		65434F03EF563495FEF6E870 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-RxLearning-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		C935BAE12B3D929B00657AE7 /* Sources */ = {
@@ -147,14 +211,6 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
-		C935BAEE2B3D929B00657AE7 /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				C935BAEF2B3D929B00657AE7 /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		C935BAF32B3D929C00657AE7 /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -218,7 +274,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
 				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
@@ -275,7 +331,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
 				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
@@ -287,6 +343,7 @@
 		};
 		C935BAFA2B3D929C00657AE7 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 78DDB1E4552AD32218F4D698 /* Pods-RxLearning.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -299,6 +356,7 @@
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -314,6 +372,7 @@
 		};
 		C935BAFB2B3D929C00657AE7 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 6F225D445F6AA64B9B9C706A /* Pods-RxLearning.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -326,6 +385,7 @@
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
