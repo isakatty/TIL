@@ -1,6 +1,6 @@
 //
 //  MovieListViewModel.swift
-//  MovieList
+//  MovieListApp
 //
 //  Created by Jisoo HAM on 1/4/24.
 //
@@ -22,23 +22,23 @@ class MovieListViewModel {
         return self.movieList.count
     }
     
+    var numberOfSections: Int {
+        return 1
+    }
+    
     func movieViewModelAtIndex(_ index: Int) -> MovieViewModel {
         let movie = self.movieList[index]
-        return MovieViewModel(dataManager: self.dataManager, movie: movie)
+        return MovieViewModel(dataManager: self.dataManager as! MovieListManager, movie: movie, index: index)
     }
     
     func handleNextVC(_ index: Int? = nil, fromCurrentVC: UIViewController, animated: Bool) {
-        
+        // 기존의 멤버가 있을때
+        if let index = index {
+            let movieVM = movieViewModelAtIndex(index)
+            let navVC = fromCurrentVC.navigationController
+            
+            let detailVC = DetailViewController(viewModel: movieVM)
+            navVC?.pushViewController(detailVC, animated: animated)
+        }
     }
-    
-//    private func goToNextVC(with movieVM: MovieViewModel, fromCurrentVC: UIViewController, animated: Bool) {
-//                
-//        let navVC = fromCurrentVC.navigationController
-//        
-//        let detailVC = DetailViewController(viewModel: movieVM)
-//        navVC?.pushViewController(detailVC, animated: animated)
-//    }
 }
-
-
-

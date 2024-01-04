@@ -1,6 +1,6 @@
 //
 //  MovieCell.swift
-//  MovieList
+//  MovieListApp
 //
 //  Created by Jisoo HAM on 1/4/24.
 //
@@ -8,7 +8,6 @@
 import UIKit
 
 class MovieCell: UITableViewCell {
-    
     var viewModel: MovieViewModel! {
         didSet {
             configureUI()
@@ -26,14 +25,6 @@ class MovieCell: UITableViewCell {
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
-    
-    let centerLabel: UILabel = {
-        let label = UILabel()
-        label.font = UIFont.boldSystemFont(ofSize: 20)
-        label.text = " 영화 목록 "
-        label.translatesAutoresizingMaskIntoConstraints = false
-        return label
-    }()
     
     let movieNameLabel: UILabel = {
         let label = UILabel()
@@ -60,7 +51,6 @@ class MovieCell: UITableViewCell {
     }()
     
     func setupStackView() {
-        self.contentView.addSubview(centerLabel)
         self.contentView.addSubview(stackView)
         stackView.addArrangedSubview(movieNameLabel)
         stackView.addArrangedSubview(movieOpenDtLabel)
@@ -68,12 +58,11 @@ class MovieCell: UITableViewCell {
     
     func setConstraints() {
         NSLayoutConstraint.activate([
-            centerLabel.heightAnchor.constraint(equalToConstant: 30),
             movieNameLabel.heightAnchor.constraint(equalToConstant: 30),
             stackView.leadingAnchor.constraint(equalTo: self.contentView.leadingAnchor),
             stackView.trailingAnchor.constraint(equalTo: self.contentView.trailingAnchor),
-            stackView.topAnchor.constraint(equalTo: self.centerLabel.topAnchor),
-            stackView.bottomAnchor.constraint(equalTo: self.centerLabel.bottomAnchor),
+            stackView.topAnchor.constraint(equalTo: self.contentView.topAnchor),
+            stackView.bottomAnchor.constraint(equalTo: self.contentView.bottomAnchor),
         ])
     }
     
@@ -81,4 +70,5 @@ class MovieCell: UITableViewCell {
         movieNameLabel.text = viewModel.movieNm
         movieOpenDtLabel.text = viewModel.openDt
     }
+
 }

@@ -1,6 +1,6 @@
 //
 //  AppDelegate.swift
-//  MovieList
+//  MovieListApp
 //
 //  Created by Jisoo HAM on 1/4/24.
 //
