@@ -8,9 +8,16 @@
 
 /* Begin PBXBuildFile section */
 		513EB9D1AE75D243AF2D1E66 /* Pods_RxLearning.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1D5B517A2468C77D442681AE /* Pods_RxLearning.framework */; };
+		C92040A22B469F6900F14438 /* Coordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = C92040A12B469F6900F14438 /* Coordinator.swift */; };
+		C92040A42B46A0DC00F14438 /* MainCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = C92040A32B46A0DC00F14438 /* MainCoordinator.swift */; };
+		C92040A72B46A5A600F14438 /* MovieListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C92040A62B46A5A600F14438 /* MovieListView.swift */; };
+		C92040A92B46A7FD00F14438 /* MovieCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C92040A82B46A7FD00F14438 /* MovieCell.swift */; };
+		C92040AC2B46A8A900F14438 /* MovieDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = C92040AB2B46A8A900F14438 /* MovieDTO.swift */; };
+		C92040AE2B46AB5100F14438 /* MovieInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = C92040AD2B46AB5100F14438 /* MovieInfo.swift */; };
+		C92040B12B46AF5B00F14438 /* BoxOfficeEndPoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = C92040B02B46AF5B00F14438 /* BoxOfficeEndPoint.swift */; };
+		C92040B42B46B00300F14438 /* AppConfigurations.swift in Sources */ = {isa = PBXBuildFile; fileRef = C92040B32B46B00300F14438 /* AppConfigurations.swift */; };
 		C935BAE92B3D929B00657AE7 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C935BAE82B3D929B00657AE7 /* AppDelegate.swift */; };
 		C935BAEB2B3D929B00657AE7 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C935BAEA2B3D929B00657AE7 /* SceneDelegate.swift */; };
-		C935BAED2B3D929B00657AE7 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C935BAEC2B3D929B00657AE7 /* ViewController.swift */; };
 		C935BAF22B3D929C00657AE7 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C935BAF12B3D929C00657AE7 /* Assets.xcassets */; };
 		C935BAF52B3D929C00657AE7 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C935BAF32B3D929C00657AE7 /* LaunchScreen.storyboard */; };
 /* End PBXBuildFile section */
@@ -19,10 +26,17 @@
 		1D5B517A2468C77D442681AE /* Pods_RxLearning.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_RxLearning.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		6F225D445F6AA64B9B9C706A /* Pods-RxLearning.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RxLearning.release.xcconfig"; path = "Target Support Files/Pods-RxLearning/Pods-RxLearning.release.xcconfig"; sourceTree = "<group>"; };
 		78DDB1E4552AD32218F4D698 /* Pods-RxLearning.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RxLearning.debug.xcconfig"; path = "Target Support Files/Pods-RxLearning/Pods-RxLearning.debug.xcconfig"; sourceTree = "<group>"; };
+		C92040A12B469F6900F14438 /* Coordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Coordinator.swift; sourceTree = "<group>"; };
+		C92040A32B46A0DC00F14438 /* MainCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainCoordinator.swift; sourceTree = "<group>"; };
+		C92040A62B46A5A600F14438 /* MovieListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieListView.swift; sourceTree = "<group>"; };
+		C92040A82B46A7FD00F14438 /* MovieCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieCell.swift; sourceTree = "<group>"; };
+		C92040AB2B46A8A900F14438 /* MovieDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieDTO.swift; sourceTree = "<group>"; };
+		C92040AD2B46AB5100F14438 /* MovieInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieInfo.swift; sourceTree = "<group>"; };
+		C92040B02B46AF5B00F14438 /* BoxOfficeEndPoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BoxOfficeEndPoint.swift; sourceTree = "<group>"; };
+		C92040B32B46B00300F14438 /* AppConfigurations.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppConfigurations.swift; sourceTree = "<group>"; };
 		C935BAE52B3D929B00657AE7 /* RxLearning.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RxLearning.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C935BAE82B3D929B00657AE7 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		C935BAEA2B3D929B00657AE7 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		C935BAEC2B3D929B00657AE7 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		C935BAF12B3D929C00657AE7 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		C935BAF42B3D929C00657AE7 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		C935BAF62B3D929C00657AE7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -49,6 +63,31 @@
 			path = Pods;
 			sourceTree = "<group>";
 		};
+		C92040A52B46A56D00F14438 /* MovieList */ = {
+			isa = PBXGroup;
+			children = (
+				C9C0AA692B457D1700446329 /* View */,
+				C9C0AA6A2B457D1B00446329 /* ViewModel */,
+			);
+			path = MovieList;
+			sourceTree = "<group>";
+		};
+		C92040AA2B46A89A00F14438 /* DTO */ = {
+			isa = PBXGroup;
+			children = (
+				C92040AB2B46A8A900F14438 /* MovieDTO.swift */,
+			);
+			path = DTO;
+			sourceTree = "<group>";
+		};
+		C92040AF2B46AF4B00F14438 /* EndPoint */ = {
+			isa = PBXGroup;
+			children = (
+				C92040B02B46AF5B00F14438 /* BoxOfficeEndPoint.swift */,
+			);
+			path = EndPoint;
+			sourceTree = "<group>";
+		};
 		C935BADC2B3D929B00657AE7 = {
 			isa = PBXGroup;
 			children = (
@@ -70,14 +109,108 @@
 		C935BAE72B3D929B00657AE7 /* RxLearning */ = {
 			isa = PBXGroup;
 			children = (
-				C935BAE82B3D929B00657AE7 /* AppDelegate.swift */,
-				C935BAEA2B3D929B00657AE7 /* SceneDelegate.swift */,
-				C935BAEC2B3D929B00657AE7 /* ViewController.swift */,
+				C9C0AA5F2B455E5E00446329 /* Application */,
+				C9C0AA602B455E8C00446329 /* Data */,
+				C9C0AA612B455EB000446329 /* Domain */,
+				C9C0AA622B455EB800446329 /* Presentation */,
 				C935BAF12B3D929C00657AE7 /* Assets.xcassets */,
 				C935BAF32B3D929C00657AE7 /* LaunchScreen.storyboard */,
 				C935BAF62B3D929C00657AE7 /* Info.plist */,
 			);
 			path = RxLearning;
+			sourceTree = "<group>";
+		};
+		C9C0AA5F2B455E5E00446329 /* Application */ = {
+			isa = PBXGroup;
+			children = (
+				C935BAE82B3D929B00657AE7 /* AppDelegate.swift */,
+				C935BAEA2B3D929B00657AE7 /* SceneDelegate.swift */,
+				C92040A12B469F6900F14438 /* Coordinator.swift */,
+				C92040A32B46A0DC00F14438 /* MainCoordinator.swift */,
+				C92040B32B46B00300F14438 /* AppConfigurations.swift */,
+			);
+			path = Application;
+			sourceTree = "<group>";
+		};
+		C9C0AA602B455E8C00446329 /* Data */ = {
+			isa = PBXGroup;
+			children = (
+				C9C0AA652B457CD300446329 /* Repositories */,
+				C9C0AA642B457CCB00446329 /* Network */,
+			);
+			path = Data;
+			sourceTree = "<group>";
+		};
+		C9C0AA612B455EB000446329 /* Domain */ = {
+			isa = PBXGroup;
+			children = (
+				C9C0AA682B457CF600446329 /* Interfaces */,
+				C9C0AA672B457CEC00446329 /* UseCases */,
+				C9C0AA662B457CE700446329 /* Entities */,
+			);
+			path = Domain;
+			sourceTree = "<group>";
+		};
+		C9C0AA622B455EB800446329 /* Presentation */ = {
+			isa = PBXGroup;
+			children = (
+				C92040A52B46A56D00F14438 /* MovieList */,
+			);
+			path = Presentation;
+			sourceTree = "<group>";
+		};
+		C9C0AA642B457CCB00446329 /* Network */ = {
+			isa = PBXGroup;
+			children = (
+				C92040AF2B46AF4B00F14438 /* EndPoint */,
+				C92040AA2B46A89A00F14438 /* DTO */,
+			);
+			path = Network;
+			sourceTree = "<group>";
+		};
+		C9C0AA652B457CD300446329 /* Repositories */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Repositories;
+			sourceTree = "<group>";
+		};
+		C9C0AA662B457CE700446329 /* Entities */ = {
+			isa = PBXGroup;
+			children = (
+				C92040AD2B46AB5100F14438 /* MovieInfo.swift */,
+			);
+			path = Entities;
+			sourceTree = "<group>";
+		};
+		C9C0AA672B457CEC00446329 /* UseCases */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = UseCases;
+			sourceTree = "<group>";
+		};
+		C9C0AA682B457CF600446329 /* Interfaces */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Interfaces;
+			sourceTree = "<group>";
+		};
+		C9C0AA692B457D1700446329 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				C92040A62B46A5A600F14438 /* MovieListView.swift */,
+				C92040A82B46A7FD00F14438 /* MovieCell.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		C9C0AA6A2B457D1B00446329 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = ViewModel;
 			sourceTree = "<group>";
 		};
 		D705F6DDE97B87D3A161A69A /* Frameworks */ = {
@@ -202,8 +335,15 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				C935BAED2B3D929B00657AE7 /* ViewController.swift in Sources */,
+				C92040B12B46AF5B00F14438 /* BoxOfficeEndPoint.swift in Sources */,
+				C92040A92B46A7FD00F14438 /* MovieCell.swift in Sources */,
+				C92040A22B469F6900F14438 /* Coordinator.swift in Sources */,
 				C935BAE92B3D929B00657AE7 /* AppDelegate.swift in Sources */,
+				C92040AC2B46A8A900F14438 /* MovieDTO.swift in Sources */,
+				C92040A72B46A5A600F14438 /* MovieListView.swift in Sources */,
+				C92040A42B46A0DC00F14438 /* MainCoordinator.swift in Sources */,
+				C92040AE2B46AB5100F14438 /* MovieInfo.swift in Sources */,
+				C92040B42B46B00300F14438 /* AppConfigurations.swift in Sources */,
 				C935BAEB2B3D929B00657AE7 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -353,7 +493,6 @@
 				INFOPLIST_FILE = RxLearning/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
@@ -364,9 +503,12 @@
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.isakHam.RxLearning;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -382,7 +524,6 @@
 				INFOPLIST_FILE = RxLearning/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
@@ -393,9 +534,12 @@
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.isakHam.RxLearning;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};
