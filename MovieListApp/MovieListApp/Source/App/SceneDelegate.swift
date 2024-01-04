@@ -1,6 +1,6 @@
 //
 //  SceneDelegate.swift
-//  MovieList
+//  MovieListApp
 //
 //  Created by Jisoo HAM on 1/4/24.
 //
@@ -15,12 +15,15 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
     func scene(_ scene: UIScene, willConnectTo session: UISceneSession, options connectionOptions: UIScene.ConnectionOptions) {
         
         guard let windowScene = (scene as? UIWindowScene) else { return }
-        let window = UIWindow(windowScene: windowScene)
+        window = UIWindow(windowScene: windowScene)
         
         let dataManager = MovieListManager()
         let movieListVM = MovieListViewModel(dataManager: dataManager)
         
-        window.rootViewController = MovieListViewController(movieListVM: movieListVM)
+        let movieListVC = MovieListViewController(movieListViewModel: movieListVM)
+        let naviVC = UINavigationController(rootViewController: movieListVC)
+        
+        self.window?.rootViewController = naviVC
         self.window?.makeKeyAndVisible()
     }
 
