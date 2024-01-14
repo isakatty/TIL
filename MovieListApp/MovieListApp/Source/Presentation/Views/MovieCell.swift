@@ -8,7 +8,7 @@
 import UIKit
 
 class MovieCell: UITableViewCell {
-    var viewModel: MovieViewModel! {
+    var viewModel: MovieCellViewModel! {
         didSet {
             configureUI()
         }
