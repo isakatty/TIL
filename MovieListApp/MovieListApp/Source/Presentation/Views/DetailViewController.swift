@@ -8,7 +8,7 @@
 import UIKit
 
 class DetailViewController: UIViewController {
-
+    
     let movieIdLabel: UILabel = {
         let label = UILabel()
         label.font = UIFont.boldSystemFont(ofSize: 16)
@@ -97,9 +97,11 @@ class DetailViewController: UIViewController {
     let labelWidth: CGFloat = 70
     var stackViewTopConstraint: NSLayoutConstraint!
     
-    var viewModel: MovieViewModel
+    weak var coordinator: Coordinator?
+    private let viewModel: MovieCellViewModel
     
-    init(viewModel: MovieViewModel) {
+    init(coordinator: Coordinator? = nil, viewModel: MovieCellViewModel) {
+        self.coordinator = coordinator
         self.viewModel = viewModel
         super.init(nibName: nil, bundle: nil)
     }
@@ -114,6 +116,11 @@ class DetailViewController: UIViewController {
         configureUI()
         setupMovieUI()
         setConstraints()
+    }
+    
+    override func viewDidDisappear(_ animated: Bool) {
+        super.viewDidDisappear(animated)
+        coordinator?.parentCoordinator?.childDidFinish(coordinator)
     }
     
     func configureUI() {

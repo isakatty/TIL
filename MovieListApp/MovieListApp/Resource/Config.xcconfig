@@ -1,0 +1,11 @@
+//
+//  Config.xcconfig
+//  MovieListApp
+//
+//  Created by Jisoo HAM on 1/9/24.
+//
+
+// Configuration settings file format documentation can be found at:
+// https://help.apple.com/xcode/#/dev745c5c974
+
+KEY = 35121b06049e02db77ffb404b2203fa6

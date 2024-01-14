@@ -10,10 +10,12 @@ import UIKit
 class MovieListViewController: UIViewController {
 
     let tableView = UITableView()
+    let environment: AppEnvironment = AppEnvironment()
     
-    let movieListViewModel: MovieListViewModel
+    weak var coordinator: MovieListMainCoordinator?
+    private let movieListViewModel: DailyBoxOfficeListViewModel
     
-    init(movieListViewModel: MovieListViewModel) {
+    init(coordinator: MovieListMainCoordinator? = nil, movieListViewModel: DailyBoxOfficeListViewModel) {
         self.movieListViewModel = movieListViewModel
         super.init(nibName: nil, bundle: nil)
     }
@@ -24,6 +26,13 @@ class MovieListViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        movieListViewModel.fetchMovies(completion: {
+            
+            DispatchQueue.main.async { [weak self] in
+                self?.tableView.reloadData()
+            }
+        })
         
         setupTableView()
         setupTableViewConstraints()
@@ -56,13 +65,14 @@ class MovieListViewController: UIViewController {
 
 extension MovieListViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return movieListViewModel.numberOfRowsInSection(section)
+        
+        return movieListViewModel.numberOfMovies
     }
     
-    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+    func tableView(_ tableView: UITableView, 
+                   cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "MovieCell", for: indexPath) as! MovieCell
-        
-        let movieVM = movieListViewModel.movieViewModelAtIndex(indexPath.row)
+        let movieVM = movieListViewModel.movieViewModelAtIndex(indexPath)
         cell.viewModel = movieVM
         
         cell.selectionStyle = .none
@@ -73,7 +83,11 @@ extension MovieListViewController: UITableViewDataSource {
 extension MovieListViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         print("1")
-        movieListViewModel.handleNextVC(indexPath.row, fromCurrentVC: self, animated: true)
+//        movieListViewModel.handleNextVC(indexPath.row, fromCurrentVC: self, animated: true)
+        coordinator?.showMovieDetail(movieModel: BoxOfficeModel(movieName: movieListViewModel.movieViewModelAtIndex(indexPath)?.movieNm ?? "없어유",
+                                                                movieCode: movieListViewModel.movieViewModelAtIndex(indexPath)?.movieCd ?? "없어유",
+                                                                openDate: movieListViewModel.movieViewModelAtIndex(indexPath)?.openDt ?? "없어유",
+                                                                audiAcc: movieListViewModel.movieViewModelAtIndex(indexPath)?.audiAc ?? "없어유"))
         print("2")
     }
 }

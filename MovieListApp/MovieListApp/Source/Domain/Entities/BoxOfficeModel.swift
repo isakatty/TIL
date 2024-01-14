@@ -1,14 +1,13 @@
 //
-//  Movie.swift
+//  BoxOfficeModel.swift
 //  MovieListApp
 //
-//  Created by Jisoo HAM on 1/4/24.
+//  Created by Jisoo HAM on 1/9/24.
 //
 
 import Foundation
 
-struct Movie: Identifiable {
-    var id: Int
+struct BoxOfficeModel {
     let movieName: String
     let movieCode: String
     let openDate: String
