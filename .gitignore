@@ -90,6 +90,6 @@ fastlane/test_output
 iOSInjectionProject/
 
 **/.DS_Store
-
+*/.xcconfig
 privateKey.swift
 **/GoogleService-Info.plist
