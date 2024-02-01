@@ -98,19 +98,12 @@
 		C98A6B522B663A5000A05EA2 /* RxCollectionView */ = {
 			isa = PBXGroup;
 			children = (
+				C9E31D652B6B70230072FAEB /* HeaderView.swift */,
+				C9E31D622B6B6EDD0072FAEB /* HeaderView.swift */,
+				C9E31D672B6B70EA0072FAEB /* TBD */,
+				C9E31D682B6B70FB0072FAEB /* ViewModel */,
 				C9E31D642B6B6FE60072FAEB /* BusStopView */,
 				C9E31D612B6B6E9E0072FAEB /* App */,
-				C9E31D582B6B6E8B0072FAEB /* BusStopCollectionView.swift */,
-				C9E31D5B2B6B6E8B0072FAEB /* BusStopInfoHeaderView.swift */,
-				C9E31D572B6B6E8B0072FAEB /* BusStopViewController.swift */,
-				C9E31D592B6B6E8B0072FAEB /* ScrollViewController.swift */,
-				C98A6B672B663C0000A05EA2 /* Model.swift */,
-				C98A6B6D2B6655A500A05EA2 /* ViewModel.swift */,
-				C9E31D622B6B6EDD0072FAEB /* HeaderView.swift */,
-				C9E31D652B6B70230072FAEB /* HeaderView.swift */,
-				C9E31D5A2B6B6E8B0072FAEB /* TableCell.swift */,
-				C99B0BC92B687CD500FE6821 /* ListCell.swift */,
-				C98A6B572B663A5000A05EA2 /* ViewController.swift */,
 				C98A6B5C2B663A5000A05EA2 /* Assets.xcassets */,
 				C98A6B5E2B663A5000A05EA2 /* LaunchScreen.storyboard */,
 				C98A6B612B663A5000A05EA2 /* Info.plist */,
@@ -130,8 +123,31 @@
 		C9E31D642B6B6FE60072FAEB /* BusStopView */ = {
 			isa = PBXGroup;
 			children = (
+				C9E31D572B6B6E8B0072FAEB /* BusStopViewController.swift */,
+				C9E31D5B2B6B6E8B0072FAEB /* BusStopInfoHeaderView.swift */,
+				C9E31D5A2B6B6E8B0072FAEB /* TableCell.swift */,
 			);
 			path = BusStopView;
+			sourceTree = "<group>";
+		};
+		C9E31D672B6B70EA0072FAEB /* TBD */ = {
+			isa = PBXGroup;
+			children = (
+				C9E31D582B6B6E8B0072FAEB /* BusStopCollectionView.swift */,
+				C99B0BC92B687CD500FE6821 /* ListCell.swift */,
+				C9E31D592B6B6E8B0072FAEB /* ScrollViewController.swift */,
+				C98A6B572B663A5000A05EA2 /* ViewController.swift */,
+			);
+			path = TBD;
+			sourceTree = "<group>";
+		};
+		C9E31D682B6B70FB0072FAEB /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				C98A6B672B663C0000A05EA2 /* Model.swift */,
+				C98A6B6D2B6655A500A05EA2 /* ViewModel.swift */,
+			);
+			path = ViewModel;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
