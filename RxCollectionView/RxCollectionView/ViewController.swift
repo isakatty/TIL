@@ -38,18 +38,19 @@ class ViewController: UIViewController {
         cell.bind(with: item)
         
         return cell
-    } configureSupplementaryView: { dataSource, collectionView, title, indexPath in
-        guard let header = collectionView.dequeueReusableSupplementaryView(
-            ofKind: UICollectionView.elementKindSectionHeader,
-            withReuseIdentifier: HeaderView.identifier,
-            for: indexPath
-        ) as? HeaderView else { return UICollectionReusableView() }
-        
-        let title = dataSource.sectionModels[indexPath.section].header
-        header.configureHeader(with: title)
-        
-        return header
-    }
+    } 
+//configureSupplementaryView: { dataSource, collectionView, title, indexPath in
+//        guard let header = collectionView.dequeueReusableSupplementaryView(
+//            ofKind: UICollectionView.elementKindSectionHeader,
+//            withReuseIdentifier: HeaderView.identifier,
+//            for: indexPath
+//        ) as? HeaderView else { return UICollectionReusableView() }
+//        
+//        let title = dataSource.sectionModels[indexPath.section].header
+//        header.configureHeader(with: title)
+//        
+//        return header
+//    }
     
     
     override func viewDidLoad() {
