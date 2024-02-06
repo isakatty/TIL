@@ -14,7 +14,7 @@ import RxDataSources
 class ViewController: UIViewController {
     
     let disposeBag = DisposeBag()
-    let viewModel = ViewModel()
+//    let viewModel = ViewModel()
     
     lazy var collectionView: UICollectionView = {
         let cv = UICollectionView(frame: .zero,
@@ -57,7 +57,7 @@ class ViewController: UIViewController {
         super.viewDidLoad()
         
         configureUI()
-        bind()
+//        bind()
         
     }
     
@@ -71,11 +71,11 @@ class ViewController: UIViewController {
         ])
     }
     
-    private func bind() {
-        Observable.just(viewModel.sections)
-            .bind(to: collectionView.rx.items(dataSource: dataSource))
-            .disposed(by: disposeBag)
-    }
+//    private func bind() {
+//        Observable.just(viewModel.sections)
+//            .bind(to: collectionView.rx.items(dataSource: dataSource))
+//            .disposed(by: disposeBag)
+//    }
     
 }
 

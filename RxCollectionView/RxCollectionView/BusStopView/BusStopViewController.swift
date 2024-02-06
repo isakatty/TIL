@@ -14,11 +14,17 @@ import RxDataSources
 
 class BusStopViewController: UIViewController {
     
-    let viewModel = ViewModel()
+    let viewModel = ViewModel(useCase: DefaultBusStopUseCase())
     let disposeBag = DisposeBag()
+    
+    let mapBtnTapEvent = PublishSubject<Int>()
+    let likeBusStopBtnTapEvent = PublishSubject<Int>()
+    let likeBusBtnTapEvent = PublishSubject<IndexPath>()
+    let alarmBtnTapEvent = PublishSubject<IndexPath>()
     
     private let headerView: BusStopInfoHeaderView = BusStopInfoHeaderView()
     private var scrollView: UIScrollView = UIScrollView()
+    private let contentView = UIView()
     private let tableView: UITableView = {
         let tv = UITableView(frame: .zero, style: .insetGrouped)
         tv.register(TableCell.self,
@@ -29,38 +35,64 @@ class BusStopViewController: UIViewController {
         tv.isScrollEnabled = false
         return tv
     }()
-    private let contentView = UIView()
     
     var tableViewHeightConstraint = NSLayoutConstraint()
-    let dataSource = RxTableViewSectionedReloadDataSource<DataSection> { dataSource, tableView, indexPath, item in
-        guard let cell = tableView.dequeueReusableCell(withIdentifier: TableCell.identifier, for: indexPath) as? TableCell else { return UITableViewCell() }
-        cell.selectionStyle = .none
-        cell.bind(with: item)
-        
-        return cell
-    } 
-//titleForHeaderInSection: { dataSource, indexPath in
-//        return dataSource.sectionModels[indexPath].header
-//    }
+    var dataSource: RxTableViewSectionedReloadDataSource<DataSection>!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
         view.backgroundColor = .systemBackground
         
-        configureUI()
-        
         tableView.rx.setDelegate(self)
             .disposed(by: disposeBag)
-        
         bind()
-        
+        configureUI()
     }
     
     func bind() {
-        Observable.just(viewModel.sections)
-            .bind(to: tableView.rx.items(dataSource: dataSource))
-            .disposed(by: disposeBag)
+        
+        let input = ViewModel.Input(
+            viewWillAppearEvent: rx
+                .methodInvoked(#selector(UIViewController.viewWillAppear))
+                .map{ _ in },
+            likeBusStopBtnTapEvent: likeBusStopBtnTapEvent.asObservable(),
+            likeBusBtnTapEvent: likeBusBtnTapEvent.asObservable(),
+            alarmBtnTapEvent: alarmBtnTapEvent.asObservable(),
+            busStopMapBtnTapEvent: mapBtnTapEvent.asObservable()
+        )
+        
+        let output = viewModel.transform(input: input)
+        bindTableView(output: output)
+        
+    }
+    
+    func bindTableView(output: ViewModel.Output) {
+        dataSource = RxTableViewSectionedReloadDataSource<DataSection> { dataSource, tableView, indexPath, item in
+            guard let cell = tableView.dequeueReusableCell(withIdentifier: TableCell.identifier, for: indexPath) as? TableCell else { return UITableViewCell() }
+            cell.selectionStyle = .none
+            cell.bind(with: item)
+            
+            cell.starBtn.rx.tap
+                .map { _ in indexPath }
+                .bind(to: self.likeBusBtnTapEvent)
+                .disposed(by: self.disposeBag)
+            
+            cell.alarmBtn.rx.tap
+                .map { _ in
+                    indexPath
+                }
+                .bind(to: self.alarmBtnTapEvent)
+                .disposed(by: self.disposeBag)
+            
+            return cell
+        }
+        
+        output.busStopSections
+            .bind(
+                to: tableView.rx.items(dataSource: dataSource)
+            )
+            .disposed(by: self.disposeBag)
     }
     
     func configureUI() {
@@ -119,9 +151,7 @@ extension BusStopViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
         guard let headerView = tableView.dequeueReusableHeaderFooterView(withIdentifier: HeaderView.identifier) as? HeaderView
         else { return UIView() }
-        
         headerView.configureHeader(with: dataSource.sectionModels[section].header)
-        
         return headerView
     }
     

@@ -14,7 +14,7 @@ class TableCell: UITableViewCell {
     
     var disposeBag = DisposeBag()
     
-    private let starBtn: UIButton = {
+    let starBtn: UIButton = {
         var config = UIButton.Configuration.filled()
         config.image = UIImage(systemName: "star")
         config.contentInsets = NSDirectionalEdgeInsets(top: 10, leading: 5, bottom: 10, trailing: 5)
@@ -24,7 +24,7 @@ class TableCell: UITableViewCell {
         return btn
     }()
     
-    private let alarmBtn: UIButton = {
+    let alarmBtn: UIButton = {
         var config = UIButton.Configuration.filled()
         config.image = UIImage(systemName: "alarm")
         config.contentInsets = NSDirectionalEdgeInsets(top: 10, leading: 5, bottom: 10, trailing: 5)
@@ -132,7 +132,12 @@ class TableCell: UITableViewCell {
     }
     
     override func prepareForReuse() {
-        super.prepareForReuse()
+        starBtn.configuration?.image = UIImage(systemName: "star")
+        alarmBtn.configuration?.image = UIImage(systemName: "alarm")
+        [busNumber, nextStopName, arr1stMsgSt, arr1stMsgMin, arr2ndMsgSt, arr2ndMsgMin]
+            .forEach { components in
+                components.text = ""
+            }
     }
 }
 

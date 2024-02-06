@@ -138,14 +138,16 @@ extension BusStopInfoHeaderView {
     }
     
     func configureSetup() {
-        self.addSubview(textStack)
-        textStack.addArrangedSubview(busStopNumLb)
-        textStack.addArrangedSubview(busStopNameLb)
-        textStack.addArrangedSubview(nextStopNameLb)
-        textStack.addArrangedSubview(btnStack)
+        addSubview(textStack)
+        [busStopNumLb, busStopNameLb, nextStopNameLb, btnStack]
+            .forEach { components in
+                textStack.addArrangedSubview(components)
+            }
         
-        btnStack.addArrangedSubview(favoriteBtn)
-        btnStack.addArrangedSubview(mapBtn)
+        [favoriteBtn, mapBtn]
+            .forEach { components in
+                btnStack.addArrangedSubview(components)
+            }
     }
     
     func configureLayouts() {
@@ -157,8 +159,14 @@ extension BusStopInfoHeaderView {
             textStack.trailingAnchor.constraint(
                 equalTo: trailingAnchor
             ),
-            textStack.topAnchor.constraint(equalTo: topAnchor, constant: 50),
-            textStack.bottomAnchor.constraint(equalTo: bottomAnchor, constant: -10)
+            textStack.topAnchor.constraint(
+                equalTo: topAnchor,
+                constant: 50
+            ),
+            textStack.bottomAnchor.constraint(
+                equalTo: bottomAnchor,
+                constant: -10
+            )
         ])
         
     }

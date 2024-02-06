@@ -17,19 +17,18 @@ struct CellInfo {
     var arrMsgSt2: String
 }
 
-struct CellData {
-    let title: String
-}
-
 struct DataSection {
     var header: String
-    var items: [Item]
+    var items: [CellInfo]
 }
 
 extension DataSection: SectionModelType {
     typealias Item = CellInfo
     
-    init(original: DataSection, items: [CellInfo]) {
+    init(
+        original: DataSection,
+        items: [CellInfo]
+    ) {
         self = original
         self.items = items
     }

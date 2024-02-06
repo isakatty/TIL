@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		7A5118844CBA48DC4FA304DC /* Pods_RxCollectionView.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DCB81119C9DBAEFCF85F9955 /* Pods_RxCollectionView.framework */; };
+		C968FDDC2B7126A100158E79 /* BusStopUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = C968FDDB2B7126A100158E79 /* BusStopUseCase.swift */; };
+		C968FDDE2B71270A00158E79 /* DefaultBusStopUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = C968FDDD2B71270A00158E79 /* DefaultBusStopUseCase.swift */; };
 		C98A6B542B663A5000A05EA2 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C98A6B532B663A5000A05EA2 /* AppDelegate.swift */; };
 		C98A6B562B663A5000A05EA2 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C98A6B552B663A5000A05EA2 /* SceneDelegate.swift */; };
 		C98A6B582B663A5000A05EA2 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C98A6B572B663A5000A05EA2 /* ViewController.swift */; };
@@ -27,6 +29,8 @@
 
 /* Begin PBXFileReference section */
 		8722C6F710AB81BA2F293FDD /* Pods-RxCollectionView.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RxCollectionView.debug.xcconfig"; path = "Target Support Files/Pods-RxCollectionView/Pods-RxCollectionView.debug.xcconfig"; sourceTree = "<group>"; };
+		C968FDDB2B7126A100158E79 /* BusStopUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BusStopUseCase.swift; sourceTree = "<group>"; };
+		C968FDDD2B71270A00158E79 /* DefaultBusStopUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DefaultBusStopUseCase.swift; sourceTree = "<group>"; };
 		C98A6B502B663A5000A05EA2 /* RxCollectionView.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RxCollectionView.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C98A6B532B663A5000A05EA2 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		C98A6B552B663A5000A05EA2 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -77,6 +81,31 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		C94B96FD2B719BCA00C8F82A /* Domain */ = {
+			isa = PBXGroup;
+			children = (
+				C94B96FE2B719BD300C8F82A /* Entity */,
+				C968FDDA2B71267000158E79 /* UseCase */,
+			);
+			path = Domain;
+			sourceTree = "<group>";
+		};
+		C94B96FE2B719BD300C8F82A /* Entity */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Entity;
+			sourceTree = "<group>";
+		};
+		C968FDDA2B71267000158E79 /* UseCase */ = {
+			isa = PBXGroup;
+			children = (
+				C968FDDB2B7126A100158E79 /* BusStopUseCase.swift */,
+				C968FDDD2B71270A00158E79 /* DefaultBusStopUseCase.swift */,
+			);
+			path = UseCase;
+			sourceTree = "<group>";
+		};
 		C98A6B472B663A5000A05EA2 = {
 			isa = PBXGroup;
 			children = (
@@ -101,6 +130,7 @@
 				C9E31D652B6B70230072FAEB /* HeaderView.swift */,
 				C9E31D622B6B6EDD0072FAEB /* HeaderView.swift */,
 				C9E31D672B6B70EA0072FAEB /* TBD */,
+				C94B96FD2B719BCA00C8F82A /* Domain */,
 				C9E31D682B6B70FB0072FAEB /* ViewModel */,
 				C9E31D642B6B6FE60072FAEB /* BusStopView */,
 				C9E31D612B6B6E9E0072FAEB /* App */,
@@ -266,12 +296,14 @@
 			files = (
 				C9E31D5C2B6B6E8B0072FAEB /* BusStopViewController.swift in Sources */,
 				C9E31D5D2B6B6E8B0072FAEB /* BusStopCollectionView.swift in Sources */,
+				C968FDDE2B71270A00158E79 /* DefaultBusStopUseCase.swift in Sources */,
 				C9E31D5E2B6B6E8B0072FAEB /* ScrollViewController.swift in Sources */,
 				C9E31D5F2B6B6E8B0072FAEB /* TableCell.swift in Sources */,
 				C9E31D602B6B6E8B0072FAEB /* BusStopInfoHeaderView.swift in Sources */,
 				C98A6B582B663A5000A05EA2 /* ViewController.swift in Sources */,
 				C98A6B542B663A5000A05EA2 /* AppDelegate.swift in Sources */,
 				C99B0BCA2B687CD500FE6821 /* ListCell.swift in Sources */,
+				C968FDDC2B7126A100158E79 /* BusStopUseCase.swift in Sources */,
 				C98A6B562B663A5000A05EA2 /* SceneDelegate.swift in Sources */,
 				C98A6B682B663C0000A05EA2 /* Model.swift in Sources */,
 				C98A6B6E2B6655A500A05EA2 /* ViewModel.swift in Sources */,
