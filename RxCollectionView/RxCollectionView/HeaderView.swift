@@ -7,7 +7,7 @@
 
 import UIKit
 
-final class HeaderView: UICollectionReusableView {
+final class HeaderView: UITableViewHeaderFooterView {
     static let identifier = "HeaderView"
     
     private var titleLabel: UILabel = {
@@ -16,10 +16,9 @@ final class HeaderView: UICollectionReusableView {
         return lb
     }()
     
-    override init(frame: CGRect) {
-        super.init(frame: .zero)
+    override init(reuseIdentifier: String?) {
+        super.init(reuseIdentifier: reuseIdentifier)
         
-        backgroundColor = .systemGreen
         configureUI()
     }
     
@@ -36,10 +35,9 @@ final class HeaderView: UICollectionReusableView {
         addSubview(titleLabel)
         
         NSLayoutConstraint.activate([
-            titleLabel.topAnchor.constraint(equalTo: self.topAnchor),
-            titleLabel.leadingAnchor.constraint(equalTo: self.leadingAnchor, constant: 10),
-            titleLabel.bottomAnchor.constraint(equalTo: self.bottomAnchor),
-            titleLabel.trailingAnchor.constraint(equalTo: self.trailingAnchor)
+            titleLabel.topAnchor.constraint(equalTo: topAnchor, constant: 10),
+            titleLabel.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 20),
+            titleLabel.bottomAnchor.constraint(equalTo: bottomAnchor,constant: -10),
         ])
     }
 }

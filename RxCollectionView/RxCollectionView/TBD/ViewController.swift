@@ -14,7 +14,7 @@ import RxDataSources
 class ViewController: UIViewController {
     
     let disposeBag = DisposeBag()
-    let viewModel = ViewModel()
+//    let viewModel = ViewModel()
     
     lazy var collectionView: UICollectionView = {
         let cv = UICollectionView(frame: .zero,
@@ -38,25 +38,26 @@ class ViewController: UIViewController {
         cell.bind(with: item)
         
         return cell
-    } configureSupplementaryView: { dataSource, collectionView, title, indexPath in
-        guard let header = collectionView.dequeueReusableSupplementaryView(
-            ofKind: UICollectionView.elementKindSectionHeader,
-            withReuseIdentifier: HeaderView.identifier,
-            for: indexPath
-        ) as? HeaderView else { return UICollectionReusableView() }
-        
-        let title = dataSource.sectionModels[indexPath.section].header
-        header.configureHeader(with: title)
-        
-        return header
-    }
+    } 
+//configureSupplementaryView: { dataSource, collectionView, title, indexPath in
+//        guard let header = collectionView.dequeueReusableSupplementaryView(
+//            ofKind: UICollectionView.elementKindSectionHeader,
+//            withReuseIdentifier: HeaderView.identifier,
+//            for: indexPath
+//        ) as? HeaderView else { return UICollectionReusableView() }
+//        
+//        let title = dataSource.sectionModels[indexPath.section].header
+//        header.configureHeader(with: title)
+//        
+//        return header
+//    }
     
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
         configureUI()
-        bind()
+//        bind()
         
     }
     
@@ -70,11 +71,11 @@ class ViewController: UIViewController {
         ])
     }
     
-    private func bind() {
-        Observable.just(viewModel.sections)
-            .bind(to: collectionView.rx.items(dataSource: dataSource))
-            .disposed(by: disposeBag)
-    }
+//    private func bind() {
+//        Observable.just(viewModel.sections)
+//            .bind(to: collectionView.rx.items(dataSource: dataSource))
+//            .disposed(by: disposeBag)
+//    }
     
 }
 
